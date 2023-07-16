@@ -16,7 +16,7 @@ module.exports = {
   async getThought(req, res) {
     try {
       const thought = await Thought.findOne({
-        _id: req.params.id,
+        _id: req.params.id
       });
       if (!thought) {
         res.status(404).json({

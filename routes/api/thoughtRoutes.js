@@ -17,14 +17,14 @@ router
 
 // Targeting a specific user by ID
 router
-    .route('/:thoughtId')
+    .route('/:id')
     .get(getThought)
     .put(updateThought)
     .delete(deleteThought);
 
 // Adding and removing friends for a specific user
 router
-    .route('thoughts/:thoughtId/:reactionId')
+    .route('/thoughts/:thoughtId/:reactionId')
     .post(addReaction)
     .delete(removeReaction);
 
