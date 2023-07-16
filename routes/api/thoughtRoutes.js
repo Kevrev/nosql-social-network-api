@@ -7,7 +7,7 @@ const {
     deleteThought,
     addReaction,
     removeReaction
-    } = require('../../controllers/userController');
+    } = require('../../controllers/thoughtController');
 
 // Creating and retieving all users
 router

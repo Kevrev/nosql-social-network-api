@@ -13,7 +13,7 @@ module.exports = {
   },
 
   // retrieves a single thought by id (GET)
-  async getUser(req, res) {
+  async getThought(req, res) {
     try {
       const thought = await Thought.findOne({
         _id: req.params.id,
