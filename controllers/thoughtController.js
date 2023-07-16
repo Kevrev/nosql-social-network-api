@@ -1,4 +1,4 @@
-const { Thought, User} = require("../models");
+const { Thought, User } = require("../models");
 
 module.exports = {
   // retrieves all thoughts (GET)
@@ -81,6 +81,48 @@ module.exports = {
       res.json({
         message: "Thought was deleted",
       });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  },
+
+  // add a reaction to a thought (POST)
+  async addReaction(req, res) {
+    try {
+      const thought = await Thought.findOneAndUpdate(
+        { _id: req.params.id },
+        { $addToSet: { reactions: req.body } },
+        { new: true }
+      );
+      if (!thought) {
+        res.status(404).json({
+          message: "No thought with this ID was found",
+        });
+        return;
+      }
+      res.json(thought);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  },
+
+  // remove a reaction from a thought (DELETE)
+  async removeReaction(req, res) {
+    try {
+      const thought = await Thought.findOneAndUpdate(
+        { _id: req.params.id },
+        { $pull: { reactions: { reactionId: req.params.reactionId } } },
+        { new: true }
+      );
+      if (!thought) {
+        res.status(404).json({
+          message: "No thought with this ID was found",
+        });
+        return;
+      }
+      res.json(thought);
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
