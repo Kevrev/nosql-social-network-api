@@ -91,7 +91,7 @@ module.exports = {
   async addReaction(req, res) {
     try {
       const thought = await Thought.findOneAndUpdate(
-        { _id: req.params.id },
+        { _id: req.params.thoughtId },
         { $addToSet: { reactions: req.body } },
         { new: true }
       );
@@ -112,7 +112,7 @@ module.exports = {
   async removeReaction(req, res) {
     try {
       const thought = await Thought.findOneAndUpdate(
-        { _id: req.params.id },
+        { _id: req.params.thoughtId },
         { $pull: { reactions: { reactionId: req.params.reactionId } } },
         { new: true }
       );
