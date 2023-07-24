@@ -1,30 +1,24 @@
-# Employee Tracker
+# NoSQL Social Network API
 ## Description
 
-This application utilizes Node.js and the Inquirer package to create a command line application that allows users to view and manage the departments, roles, and employees in a company. 
-Users can view all departments, roles, and employees as well as add new ones and update existing entries. MySQL is used to create the database and users can use tools such as MySQL Workbench to view the database and its contents.
+This application utilizes Node.js, Express.js, Mongodb, and Mongoose to create a social network API. The application allows the creation of new users who can then have friends/thoughts/reactions added and removed. The application also enables for the updating of certain content like thoughts and a user's profile. Users can also be deleted.
 
 
 ## Usage
 
-This application runs in the terminal so users will have to download the repository. It also requires users to have [Node.js](https://nodejs.org/en) installed. Once a user has installed Node, navigate to a terminal within the directory of the application. Install the Inquirer package by running the following command in the terminal: `npm install inquirer`. Install the dotenv package by running the following command in the terminal: `npm install dotenv`. Fill out the .env.EXAMPLE file and rename it to .env.
+This application runs in the terminal so users will have to download the repository. It also requires users to have [Node.js](https://nodejs.org/en) installed.
 
-Users will have to have MySQL installed on their machine and can initially create the schema for the database. Users can then seed the database by using the seed.sql file for initial entries.
+Users will have to have MongoDB installed on their machine. They can do so by following the instructions [here](https://docs.mongodb.com/manual/installation/). Users will also have to install Mongooose by running the following command in the terminal: `npm install mongoose`. 
 
-Run the application by running the following command in the terminal: `node prompt.js`. The application will give users a number of options which can be navigated with the arrow keys on the keyboard. Users can select the option they want by pressing the enter key. The database will reflect the changes made by the user.
-
-Users can access the deployed GitHub pages site and browse through the different pages. The navbar at the top hosts the links to each page.
+Run the application by running the following command in the terminal: `node server.js`. Once the connection is made, users can ensure the database is visible on MongoDB Compass and seed data with the utils data as well.
 
 ![Screenshot](/assets/images/screenshot.jpg)
 
-Link to the deployed website itself:
+Link to the GitHub repository:
 
-https://github.com/Kevrev/note-taker
+https://github.com/Kevrev/nosql-social-network-api
 
 A video walkthrough of the application:
-
-[insert video link here]
-
 
 https://github.com/Kevrev/nosql-social-network-api/assets/107510684/94d26ac9-8772-49de-9fdb-7cf71d331926
 
@@ -36,14 +30,14 @@ https://github.com/Kevrev/nosql-social-network-api/assets/107510684/94d26ac9-877
 
 - [Express.js](https://expressjs.com/)
 
-- [MySQL](https://www.mysql.com/)
+- [MongoDB](https://www.mongodb.com/)
 
-- [dotenv](https://www.npmjs.com/package/dotenv)
+- [MongoDB Compass](https://www.mongodb.com/products/compass)
 
-- [MySQL Workbench](https://www.mysql.com/products/workbench/)
+- [Mongoose](https://mongoosejs.com/)
 
 ## Credits
 
-Credit to [this](https://medium.com/@kukreti.ashutosh/episode-2-mysql-database-setup-and-seeding-77873ce06e96) StackOverflow thread for helping me better understand how some of the product-routes api work in practice.
+Credit to [MongoDB](https://www.mongodb.com/) for their [documentation](https://docs.mongodb.com/manual/) and [Mongoose](https://mongoosejs.com/) for their [documentation](https://mongoosejs.com/docs/api.html) which made it far easier to understand the differences between this and MySQL.
 
-This StackOverflow blogpost bu [John Au-Yeung and Ryan Donovan](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/) also provided some helpful tips for REST API design. 
+Credit to [ChatGPT](https://chat.openai.com/) for generating the initial data I used for my database like thoughts, usernames, emails, and the like.
