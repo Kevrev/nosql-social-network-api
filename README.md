@@ -25,11 +25,14 @@ A video walkthrough of the application:
 
 [insert video link here]
 
+
+https://github.com/Kevrev/nosql-social-network-api/assets/107510684/94d26ac9-8772-49de-9fdb-7cf71d331926
+
+
+
 ## Technology Used
 
 - [Node.js](https://nodejs.org/en)
-
-- [Inquirer.js](https://www.npmjs.com/package/inquirer)
 
 - [Express.js](https://expressjs.com/)
 
